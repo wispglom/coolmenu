@@ -6,6 +6,24 @@
     <title>Image Viewer</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+    <audio id="bgAudio" src="music.mp3"></audio>
+    
+    <script>
+        window.addEventListener('load', () => {
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = pdfPath;
+    
+            const audio = document.getElementById('bgAudio');
+            // Try to autoplay once
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Autoplay blocked; you could show a play button if you want
+                    console.log('Autoplay was blocked by the browser.');
+                });
+            }
+        });
+    </script>
 
         body, html {
             width: 100%;
