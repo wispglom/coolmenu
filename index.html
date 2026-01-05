@@ -6,22 +6,6 @@
     <title>Image Viewer</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-    <audio id="bgAudio" src="music.mp3"></audio>
-    
-<script>
-    window.addEventListener('load', () => {
-        const viewer = document.getElementById('pdfViewer');
-        viewer.src = pdfPath;
-
-        const audio = document.getElementById('bgAudio');
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                console.log('Autoplay was blocked by the browser.');
-            });
-        }
-    });
-</script>
 
         body, html {
             width: 100%;
@@ -51,5 +35,20 @@
     <div class="container">
         <img src="image.jpg" alt="Static image">
     </div>
+
+    <!-- Audio element (no controls, plays once) -->
+    <audio id="bgAudio" src="music.mp3"></audio>
+
+    <script>
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('bgAudio');
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    console.log('Autoplay was blocked by the browser.');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
