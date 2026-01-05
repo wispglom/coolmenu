@@ -14,11 +14,9 @@
             viewer.src = pdfPath;
     
             const audio = document.getElementById('bgAudio');
-            // Try to autoplay once
             const playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.catch(() => {
-                    // Autoplay blocked; you could show a play button if you want
                     console.log('Autoplay was blocked by the browser.');
                 });
             }
