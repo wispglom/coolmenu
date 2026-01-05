@@ -35,20 +35,5 @@
     <div class="container">
         <img src="image.jpg" alt="Static image">
     </div>
-
-    <!-- Audio element (no controls, plays once) -->
-    <audio id="bgAudio" src="music.mp3"></audio>
-
-    <script>
-        window.addEventListener('load', () => {
-            const audio = document.getElementById('bgAudio');
-            const playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    console.log('Autoplay was blocked by the browser.');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
